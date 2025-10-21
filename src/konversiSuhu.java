@@ -22,10 +22,10 @@ public class konversiSuhu extends javax.swing.JFrame {
             konversiSuhu();
         }
     };
-    r1.addItemListener(listener);
-    r2.addItemListener(listener);
-    r3.addItemListener(listener);
-    r4.addItemListener(listener);
+    r1Fahrenheit.addItemListener(listener);
+    r2Celcius.addItemListener(listener);
+    r3Kelvin.addItemListener(listener);
+    r4Reamur.addItemListener(listener);
     }
 
     /**
@@ -39,32 +39,31 @@ public class konversiSuhu extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbmSatuan = new javax.swing.JComboBox<>();
         txtsuhu = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        r1 = new javax.swing.JRadioButton();
-        r2 = new javax.swing.JRadioButton();
-        r3 = new javax.swing.JRadioButton();
-        r4 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        txthasil = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        r1Fahrenheit = new javax.swing.JRadioButton();
+        r2Celcius = new javax.swing.JRadioButton();
+        r3Kelvin = new javax.swing.JRadioButton();
+        r4Reamur = new javax.swing.JRadioButton();
+        btnHasil = new javax.swing.JButton();
+        txtHasil = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("KONVERSI SUHU");
+        judul.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        judul.setText("KONVERSI SUHU");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Masukkan Suhu Dalam");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celcius(°C)", "Reamur(°R)", "Fahrenheit(°H)", "Kelvin(°K)" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbmSatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celcius(°C)", "Reamur(°R)", "Fahrenheit(°H)", "Kelvin(°K)" }));
+        cbmSatuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbmSatuanActionPerformed(evt);
             }
         });
 
@@ -86,40 +85,38 @@ public class konversiSuhu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Konversi Ke Dalam ");
 
-        buttonGroup1.add(r1);
-        r1.setText("Fahrenheit");
+        buttonGroup1.add(r1Fahrenheit);
+        r1Fahrenheit.setText("Fahrenheit");
 
-        buttonGroup1.add(r2);
-        r2.setText("Celcius");
-        r2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(r2Celcius);
+        r2Celcius.setText("Celcius");
+        r2Celcius.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                r2ActionPerformed(evt);
+                r2CelciusActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(r3);
-        r3.setText("kelvin");
+        buttonGroup1.add(r3Kelvin);
+        r3Kelvin.setText("kelvin");
 
-        buttonGroup1.add(r4);
-        r4.setText("Reamur");
+        buttonGroup1.add(r4Reamur);
+        r4Reamur.setText("Reamur");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Cek Hasil");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnHasil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnHasil.setText("Cek Hasil");
+        btnHasil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHasilActionPerformed(evt);
             }
         });
 
-        txthasil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txthasil.addActionListener(new java.awt.event.ActionListener() {
+        txtHasil.setEditable(false);
+        txtHasil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtHasil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txthasilActionPerformed(evt);
+                txtHasilActionPerformed(evt);
             }
         });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("°");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,60 +133,57 @@ public class konversiSuhu extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbmSatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtsuhu, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4))
+                                .addComponent(txtsuhu, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(77, 77, 77)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(r2)
-                                    .addComponent(r1))
+                                    .addComponent(r2Celcius)
+                                    .addComponent(r1Fahrenheit))
                                 .addGap(58, 58, 58)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(r4)
-                                    .addComponent(r3))))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                                    .addComponent(r4Reamur)
+                                    .addComponent(r3Kelvin))))))
+                .addContainerGap(33, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(judul)
                         .addGap(123, 123, 123))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnHasil)
                         .addGap(163, 163, 163))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txthasil, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addComponent(judul)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsuhu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(cbmSatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtsuhu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(r2)
-                    .addComponent(r3))
+                    .addComponent(r2Celcius)
+                    .addComponent(r3Kelvin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(r1)
-                    .addComponent(r4))
+                    .addComponent(r1Fahrenheit)
+                    .addComponent(r4Reamur))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnHasil)
                 .addGap(18, 18, 18)
-                .addComponent(txthasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -214,31 +208,28 @@ public class konversiSuhu extends javax.swing.JFrame {
 
 
     private void konversiSuhu() {
-        if (txtsuhu.getText().isEmpty()) {
-//        javax.swing.JOptionPane.showMessageDialog(this, "Masukkan nilai suhu terlebih dahulu!");
-        return;
-    }
+
          try {
         // 2. Ambil nilai suhu dan satuan awal
         // Hapus simbol derajat agar bisa dibaca sebagai angka
         String inputText = txtsuhu.getText().replaceAll("[^0-9.-]", "");
         double suhuAwal = Double.parseDouble(inputText);
 
-        String satuanAwal = jComboBox1.getSelectedItem().toString();
+        String satuanAwal = cbmSatuan.getSelectedItem().toString();
         String satuan = "";
 
         // 3. Tentukan satuan tujuan berdasarkan radio button
         String satuanTujuan = "";
-        if (r1.isSelected()) {
+        if (r1Fahrenheit.isSelected()) {
             satuanTujuan = "Fahrenheit";
             satuan = "°F";
-        } else if (r2.isSelected()) {
+        } else if (r2Celcius.isSelected()) {
             satuanTujuan = "Celcius";
             satuan = "°C";
-        } else if (r3.isSelected()) {
+        } else if (r3Kelvin.isSelected()) {
             satuanTujuan = "Kelvin";
             satuan = "°K";
-        } else if (r4.isSelected()) {
+        } else if (r4Reamur.isSelected()) {
             satuanTujuan = "Reamur";
             satuan = "°R";
         } else {
@@ -284,7 +275,7 @@ public class konversiSuhu extends javax.swing.JFrame {
         }
 
         // 5. Tampilkan hasil di TextField
-        txthasil.setText(String.format("%.2f °%s", hasil, satuanTujuan.charAt(0) ,satuan));
+        txtHasil.setText(String.format("%.2f °%s", hasil, satuanTujuan.charAt(0) ,satuan));
 
     } catch (NumberFormatException e) {
         javax.swing.JOptionPane.showMessageDialog(this, "Input harus berupa angka yang valid!");
@@ -304,9 +295,9 @@ public class konversiSuhu extends javax.swing.JFrame {
 }
 
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbmSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmSatuanActionPerformed
         // TODO add your handling code here:
-    String pilihan = jComboBox1.getSelectedItem().toString();
+    String pilihan = cbmSatuan.getSelectedItem().toString();
     
     // Tentukan simbol derajat sesuai pilihan
     switch (pilihan) {
@@ -323,17 +314,22 @@ public class konversiSuhu extends javax.swing.JFrame {
     if (autoConvert) {
         konversiSuhu();
     }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbmSatuanActionPerformed
 
-    private void r2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r2ActionPerformed
+    private void r2CelciusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r2CelciusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_r2ActionPerformed
+    }//GEN-LAST:event_r2CelciusActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHasilActionPerformed
         // TODO add your handling code here:
+        if (txtsuhu.getText().isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Masukkan nilai suhu terlebih dahulu!");
+        return;
+    }
+                
         autoConvert = true;
         konversiSuhu();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnHasilActionPerformed
 
     private void txtsuhuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsuhuKeyTyped
         // TODO add your handling code here:
@@ -363,9 +359,9 @@ public class konversiSuhu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtsuhuFocusLost
 
-    private void txthasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthasilActionPerformed
+    private void txtHasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHasilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txthasilActionPerformed
+    }//GEN-LAST:event_txtHasilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,19 +399,18 @@ public class konversiSuhu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHasil;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cbmSatuan;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton r1;
-    private javax.swing.JRadioButton r2;
-    private javax.swing.JRadioButton r3;
-    private javax.swing.JRadioButton r4;
-    private javax.swing.JTextField txthasil;
+    private javax.swing.JLabel judul;
+    private javax.swing.JRadioButton r1Fahrenheit;
+    private javax.swing.JRadioButton r2Celcius;
+    private javax.swing.JRadioButton r3Kelvin;
+    private javax.swing.JRadioButton r4Reamur;
+    private javax.swing.JTextField txtHasil;
     private javax.swing.JTextField txtsuhu;
     // End of variables declaration//GEN-END:variables
 }
