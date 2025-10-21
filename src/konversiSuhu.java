@@ -56,6 +56,7 @@ public class konversiSuhu extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        judul.setBackground(new java.awt.Color(0, 0, 0));
         judul.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         judul.setText("APLIKASI KONVERSI SUHU");
 
